@@ -1,0 +1,26 @@
+classDiagram
+    class Game{
+        +int score
+        +int high_score
+        +start_game()
+        +end_game()
+    }
+    class Snake{
+        +list body
+        +str direction
+        +move()
+        +grow()
+    }
+    class Food{
+        +tuple position
+        +generate()
+    }
+    class ScoreBoard{
+        +int score
+        +int high_score
+        +update_score()
+        +update_high_score()
+    }
+    Game "1" -- "1" Snake: controls
+    Game "1" -- "1" Food: generates
+    Game "1" -- "1" ScoreBoard: updates
